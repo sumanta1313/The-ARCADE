@@ -1,0 +1,148 @@
+
+.contact-us{
+     width: 90vw;
+    margin-inline: auto; 
+    align-items: center; 
+    --grid-gap: 4rem;
+    margin-block: 3rem; 
+    grid-auto-columns: 1fr; 
+    grid-template-areas:
+    'one'
+    'two';
+}
+
+.contact-us:nth-child(1){
+    grid-area: one;
+}
+
+.contact-us:nth-child(2){
+    grid-area: two;
+}
+
+.contact-form{
+    margin-block: 2rem;
+    --gridgap:1rem;
+}
+
+#texto{
+    animation: appr 0.5s ease-in-out;
+}
+
+
+.contact-us input{ 
+    border: 0;
+    padding: 1rem 2rem; 
+    border-radius: 2rem;
+    animation: sco 0.6s ease-in-out;
+    }
+
+
+    .contact-us textarea{  
+        animation: sco 0.6s ease-in-out;
+       }
+
+.contact-us input:focus{
+    outline: none;
+    }
+
+
+.contact-us textarea{ 
+    width: 100%; 
+    border: 0;
+    border-radius: 2rem;
+}
+
+.contact-us textarea:focus{
+        outline: none;
+}
+
+.contact-btn > button{
+        padding: 1rem 3rem;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        animation: sco 0.7s ease-in-out;
+}
+
+
+.map{
+    background-color: hsl(var(--clr-red)/0.3); 
+    padding: 1rem 2rem;
+    margin-block: 2rem;
+    position: relative;
+    animation: appry 0.6s ease-in-out;
+    }
+
+.map::before{
+    content: '';
+    width: 5px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: hsl(var(--clr-red));
+    position: absolute;
+    }
+
+
+.support-info{
+    animation: sco  ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+/*=========Media Quaries========== */
+@media (min-width: 45em) {
+    .contact-us{
+    grid-template-areas:
+    'one two';
+    }
+    .contact-us h1 {
+    font-size: 1rem;
+    }
+.map h4{
+    font-size: 1rem;
+}
+
+}
+
+
+.support-container{ 
+    width: 90vw;
+    margin-inline: auto;
+    margin-bottom: 7rem; 
+    place-items: center; 
+    --grid-gap: 3rem; 
+    grid-auto-columns: 1fr; 
+    grid-template-areas:
+    'one'
+    'two'
+    'three';
+    }
+
+.support-container:nth-child(1){
+    grid-area: one;
+    }
+    .support-container:nth-child(2){
+        grid-area: two;
+        }
+        .support-container:nth-child(3){
+            grid-area: three;
+            }
+
+.support-info{
+    --grid-gap:1rem;
+    place-items: center;
+}
+.support-img{
+    place-items: center;
+}
+
+
+@media (min-width: 45em) {
+    .support-container{
+    grid-template-areas: 'one two three';
+}
+    .support-info > P,
+    .support-info span{
+    font-size: 1rem
+    }
+    }

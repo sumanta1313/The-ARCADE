@@ -1,0 +1,120 @@
+
+/* ======About Section=========== */
+.about-section{
+    width: 90vw;
+    margin-inline: auto;
+    margin-block: 4rem;
+    grid-template-areas:
+        'one' 'two';
+}
+
+.about-section :nth-child(1){ 
+    grid-area: one;
+}
+
+.about-section :nth-child(2){ 
+    grid-area: two;
+}
+
+.about-section >* img{
+border-radius: 2rem;
+margin-bottom: 2rem;
+}
+
+.about-info{
+padding-inline: 0.5rem;
+}
+
+.about-info >* p{
+    line-height: 1.8rem;
+}
+
+.about-btn{
+    margin-top: 3rem;
+    animation: appry 0.8s ease-in-out;
+}
+
+.shop-feature{
+    background-color: hsl(var(--clr-gray));
+}
+
+
+#fimg{
+    
+        animation: sco 0.5s ease-in-out;
+    
+}
+
+#ftxt h3{
+
+        animation: sco 0.6s ease-in-out;
+
+}
+
+
+#ftxt h1{
+
+    animation: appr 0.7s ease-in-out;
+
+}
+
+#ftxt p{
+
+    animation: appry 0.8s ease-in-out;
+
+}
+
+
+#secimg{
+    
+    animation: sco  ease-in-out;
+    animation-timeline: view();
+animation-range: entry 0% cover 40%;
+
+}
+
+#sectxt h3{
+    animation: sco  ease-in-out;
+    animation-timeline: view();
+animation-range: entry 0% cover 40%;
+}
+
+
+#sectxt h1{
+    animation: appr  ease-in-out;
+    animation-timeline: view();
+animation-range: entry 0% cover 40%;
+}
+
+#sectxt p{
+    animation: appry  ease-in-out;
+    animation-timeline: view();
+animation-range: entry 0% cover 40%;
+}
+
+
+/*========Media Quries=========== */
+
+
+@media (min-width: 60em){ 
+    .about-section{
+        grid-auto-columns: 1fr; 
+        align-items: center;
+        --grid-gap: 3rem;
+        grid-template-areas: 'one two';
+}
+
+    .about-info{
+        display: grid;
+        place-content: center;
+        padding-top: 10rem;
+}
+
+.about-info > h3{
+    font-size: 1rem;
+   
+
+}
+
+}
+

@@ -1,0 +1,6 @@
+/* ==================== For the gap between head section andrecent news ========================== */
+
+.blog{
+     margin-block: 3rem; 
+    --gap:2rem;
+}
