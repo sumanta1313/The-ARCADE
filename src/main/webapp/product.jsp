@@ -46,8 +46,8 @@
 %>
     <nav class="navbar navbar-expand-xl">
       <div class="container h-100">
-        <a class="navbar-brand" href="products.jsp">
-          <h1 class="tm-site-title mb-0">Product Admin</h1>
+        <a class="navbar-brand" href="product.jsp">
+          <h1 class="tm-site-title mb-0"><img src="image\logo.png.png" alt=""></h1>
         </a>
         <button
           class="navbar-toggler ml-auto mr-0"

@@ -46,8 +46,8 @@
 %>
     <nav class="navbar navbar-expand-xl">
       <div class="container h-100">
-        <a class="navbar-brand" href="products.jsp">
-          <h1 class="tm-site-title mb-0">Product Admin</h1>
+        <a class="navbar-brand" href="product.jsp">
+          <h1 class="tm-site-title mb-0"><img src="image\logo.png.png" alt=""></h1>
         </a>
         <button
           class="navbar-toggler ml-auto mr-0"
@@ -90,6 +90,15 @@
         </div>
       </div>
     </nav>
+    <%
+		HttpSession s = request.getSession();
+		String aname = (String)s.getAttribute("aname");	
+		
+		String aid = (String)s.getAttribute("aid");
+	%>
+	
+    <div class="container mt-5">
+    <p style="color:  #f5a623;"><b>Welcome</b>, <i><%=aname%></i> </p>
      <div class="container mt-5">
       <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-12 tm-block-col">

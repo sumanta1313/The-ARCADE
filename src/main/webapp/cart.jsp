@@ -191,12 +191,13 @@ i {
 	margin-right: 5px;
 }
 .right-bar {
+	position: sticky;
 	flex: 25%;
 	margin-left: 18%;
 	margin-right: 18%;
 	width: 65%;
 	padding: 20px;
-	height: 460px;
+	height: 350px;
 	border-radius: 5px;
 	box-shadow: rgba(39, 39, 39, 0.637) 0px 0px 16px 0px;
     border-radius: 25px;
@@ -204,12 +205,12 @@ i {
     
 }
 .right-bar hr {
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 }
 .right-bar p {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	font-size: 20px;
 }
 .right-bar a {
@@ -382,7 +383,22 @@ left:1%;
 
   <body class="home">
 
+<%
 
+	
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
+	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+	
+	response.setHeader("Expires", "0"); //proxies
+
+	if(session.getAttribute("pmail")==null ){
+		response.sendRedirect("login.jsp");
+	}
+
+	
+
+%>
 
     <!-- ========================== Header Section ============================== -->
 
@@ -514,7 +530,7 @@ left:1%;
   <table border="none">
         <% 
        
-
+			int tc = 0;
           try {
             
             String sessionUid = (String) session.getAttribute("uid");
@@ -533,8 +549,11 @@ left:1%;
 
               ResultSet rs = ps.executeQuery();
 
-              while (rs.next()) {
-                
+              while (rs.next()) 
+            	  {
+      				int cost = rs.getInt("pdprice") * rs.getInt("quantity");	
+      			
+      				tc = tc + cost;
 
         %>
         
@@ -597,13 +616,13 @@ left:1%;
         
       </div>
       <div class="right-bar">
-        <p><span>Subtotal</span> <span>&#8377;100</span></p>
+        
+        
+        <p><span><b>Subtotal</b></span> <span><sup>&#8377;</sup> <b><%=tc%></b></span></p>
         <hr>
-        <p><span>Shipping</span> <span>&#8377;70</span></p>
-        <hr>
-        <p><span>Total</span> <span>&#8377;200</span></p>
-        <hr>
-        <a href="#"><i class="uil uil-shopping-cart"></i>Checkout</a>
+         <p><img style="width:30px;" src="image/accept.png" ><span style="color:#3366ff; margin-right:734px;">EMI Available Here.</span></p>
+        <p><img style="width:30px;" src="image/accept.png" ><span style="color:#00cc00; margin-right:500px;">Part of your order Qualifies for FREE Delivery.</span></p>
+        <a href="#"><i class="uil uil-box"></i>Proceed to Buy</a>
         <a href="shop.jsp"  id="home">
           <i class="uil uil-home"></i>Continue Shopping
         </a>

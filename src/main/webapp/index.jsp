@@ -37,8 +37,8 @@
     
   .sub-pro p{
             text-wrap: wrap;
-            margin-top: -12%;
-            margin-left: 5%;
+            margin-top: 10%;
+            margin-left: 8%;
             
 	 height:66px;
     overflow: hidden;           
@@ -49,8 +49,8 @@
         
           #pr{
            position:relative;
-           left:-53%;
-           margin-top:17.9%;
+           left:-5%;
+           top:-1%;
             font-size: 22px;
             color: #108800;
         }
@@ -58,7 +58,7 @@
          #qt{
             width: 40%;
             z-index: 5;
-            margin-top: 5%;
+            margin-top: 20%;
             position:relative;
             left:3%;
             font-size: 15px;
@@ -117,7 +117,22 @@
 
 <body class="home">
 
+<%
 
+	
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
+	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+	
+	response.setHeader("Expires", "0"); //proxies
+
+	if(session.getAttribute("pmail")==null ){
+		response.sendRedirect("login.jsp");
+	}
+
+	
+
+%>
     <!-- ========================== Header Section ============================== -->
 
     <header class="primary-header container flex">
@@ -309,10 +324,10 @@
 <a href='product-show.jsp?pid=<%= rs.getString("pid") %>' class="sub-pro">
     <img src="File_search?pid=<%=rs.getString("pid") %>" >
     <p class="fs-200"><%=rs.getString("pdname") %></p>
-    <span id="qt"><b>Qty : </b><%=rs.getString("quantity") %></span>
+    <span id="qt"><b>Quantity : </b><%=rs.getString("quantity") %></span>
     <span id='pr'>&#8377;<%=rs.getString("pdprice") %></span>
 </a>
-<hr>
+
 			<%
 			
 			}			
@@ -323,7 +338,7 @@
 		}
 	%>
 			<div class="carb">
-           <a href="cart.jsp"  style="text-decoration: none; margin-left:10%;"><button class="navbut bg-red text-white fs-100 fs-montserrat bold-500" style="text-decoration: none; transform:scale(0.8); " >Cart</button> </a>
+           <a href="cart.jsp"  style="text-decoration: none; margin-left:0%;"><button class="navbut bg-red text-white fs-100 fs-montserrat bold-500" style="text-decoration: none; transform:scale(0.8); " >Show More</button> </a>
           </div>
           </div>
       </div>
